@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="en" data-theme="auto">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Oleksandr Sukhoviy — GitHub Developer</title>
+    <meta name="description" content="Portfolio of Oleksandr Sukhoviy — React, TypeScript, Vite, MUI. Projects, skills and contact information." />
+    <meta name="theme-color" content="#0ea5e9" />
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Oleksandr Sukhoviy — GitHub Developer" />
+    <meta property="og:description" content="React + TypeScript engineer. Quality-focused UI, clean architecture, and robust testing." />
+    <meta property="og:url" content="https://santey13.github.io/" />
+    <meta property="og:image" content="https://github.com/santey13.png?size=600" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+
+    <style>
+      :root {
+        --bg: #0b1020;
+        --panel: #0f172a;
+        --text: #e5e7eb;
+        --muted: #9ca3af;
+        --brand: #0ea5e9;
+        --brand-contrast: #081019;
+        --border: #1f2937;
+        --card: #0b1220;
+        --shadow: 0 10px 30px rgba(2, 6, 23, 0.45);
+      }
+      @media (prefers-color-scheme: light) {
+        html[data-theme="auto"] {
+          --bg: #f8fafc;
+          --panel: #ffffff;
+          --text: #0f172a;
+          --muted: #475569;
+          --brand: #0284c7;
+          --brand-contrast: #e0f2fe;
+          --border: #e2e8f0;
+          --card: #ffffff;
+          --shadow: 0 10px 30px rgba(2, 6, 23, 0.08);
+        }
+      }
+      html[data-theme="dark"] {
+        --bg: #0b1020;
+        --panel: #0f172a;
+        --text: #e5e7eb;
+        --muted: #9ca3af;
+        --brand: #0ea5e9;
+        --brand-contrast: #081019;
+        --border: #1f2937;
+        --card: #0b1220;
+        --shadow: 0 10px 30px rgba(2, 6, 23, 0.45);
+      }
+
+      *, *::before, *::after { box-sizing: border-box; }
+      html, body { height: 100%; }
+      body {
+        margin: 0;
+        font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+        color: var(--text);
+        background: radial-gradient(1200px 600px at 10% -10%, rgba(14,165,233,0.15), transparent 60%),
+                    radial-gradient(1200px 600px at 90% -20%, rgba(99,102,241,0.12), transparent 60%),
+                    var(--bg);
+        line-height: 1.6;
+      }
+      a { color: inherit; text-decoration: none; }
+      img { max-width: 100%; display: block; }
+
+      .container {
+        width: min(1120px, 92vw);
+        margin-inline: auto;
+      }
+
+      /* Skip link */
+      .skip-link {
+        position: absolute;
+        left: -999px;
+        top: auto;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+      }
+      .skip-link:focus {
+        position: fixed;
+        left: 1rem;
+        top: 1rem;
+        width: auto;
+        height: auto;
+        background: var(--brand);
+        color: white;
+        padding: 0.5rem 0.75rem;
+        border-radius: 0.5rem;
+        z-index: 1000;
+      }
+
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        backdrop-filter: saturate(120%) blur(8px);
+        background: color-mix(in oklab, var(--panel) 82%, transparent);
+        border-bottom: 1px solid var(--border);
+      }
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.85rem 0;
+        gap: 1rem;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.2px;
+      }
+      .brand .dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 999px;
+        background: linear-gradient(135deg, var(--brand), #60a5fa);
+        box-shadow: 0 0 0 4px color-mix(in oklab, var(--brand) 18%, transparent);
+      }
+      .nav-links {
+        display: flex;
+        gap: 1.25rem;
+        align-items: center;
+      }
+      .nav-links a {
+        color: var(--muted);
+        font-weight: 600;
+        padding: 0.4rem 0.5rem;
+        border-radius: 0.5rem;
+      }
+      .nav-links a:hover {
+        color: var(--text);
+        background: color-mix(in oklab, var(--brand) 16%, transparent);
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        padding: 0.75rem 1rem;
+        border-radius: 0.75rem;
+        border: 1px solid var(--border);
+        background: linear-gradient(180deg, color-mix(in oklab, var(--panel) 92%, white 8%), var(--panel));
+        color: var(--text);
+        font-weight: 600;
+        box-shadow: var(--shadow);
+        transition: transform 120ms ease, background 200ms ease, border-color 200ms ease;
+      }
+      .btn:hover { transform: translateY(-1px); border-color: color-mix(in oklab, var(--brand) 40%, var(--border)); }
+      .btn.primary {
+        background: linear-gradient(180deg, color-mix(in oklab, var(--brand) 20%, white), var(--brand));
+        color: white;
+        border-color: color-mix(in oklab, var(--brand) 60%, var(--border));
+      }
+      .btn.primary:hover { filter: saturate(1.05) brightness(1.05); }
+
+      .hero {
+        padding: 5rem 0 3rem;
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 2rem;
+        align-items: center;
+      }
+      .hero h1 {
+        margin: 0 0 0.5rem;
+        font-size: clamp(2rem, 4.2vw, 3rem);
+        letter-spacing: -0.02em;
+      }
+      .hero p.lead {
+        margin: 0 0 1.25rem;
+        color: var(--muted);
+        font-size: clamp(1rem, 1.6vw, 1.125rem);
+      }
+      .hero .actions { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 0.5rem; }
+      .avatar {
+        width: 160px; height: 160px;
+        border-radius: 24px;
+        background:
+          radial-gradient(60px 60px at 70% 30%, rgba(255,255,255,0.15), transparent),
+          linear-gradient(135deg, var(--brand), #6366f1);
+        box-shadow: var(--shadow);
+        border: 1px solid color-mix(in oklab, var(--brand) 30%, var(--border));
+      }
+      .socials { display: flex; gap: 0.75rem; margin-top: 1rem; }
+      .icon-btn {
+        width: 40px; height: 40px; display: inline-grid; place-items: center;
+        border-radius: 10px; border: 1px solid var(--border);
+        background: var(--panel);
+      }
+      .icon-btn:hover { border-color: color-mix(in oklab, var(--brand) 40%, var(--border)); }
+      .icon { width: 18px; height: 18px; fill: currentColor; }
+
+      section { padding: 3rem 0; }
+      .section-title {
+        font-size: 1.25rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted);
+        margin-bottom: 1rem;
+      }
+      .card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 1rem;
+        padding: 1rem;
+        box-shadow: var(--shadow);
+      }
+      .grid { display: grid; gap: 1rem; }
+      .grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+      .grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
+      @media (max-width: 900px) { .hero { grid-template-columns: 1fr; } .grid.cols-3 { grid-template-columns: 1fr 1fr; } }
+      @media (max-width: 640px) { .grid.cols-3, .grid.cols-2 { grid-template-columns: 1fr; } }
+
+      .badge {
+        display: inline-flex; align-items: center; gap: 0.35rem;
+        padding: 0.4rem 0.6rem; border-radius: 999px; border: 1px solid var(--border);
+        background: linear-gradient(180deg, color-mix(in oklab, var(--panel) 92%, white 8%), var(--panel));
+        font-weight: 600; color: var(--text);
+      }
+      .badge .dot { width: 8px; height: 8px; border-radius: 999px; background: var(--brand); }
+
+      .project { display: grid; gap: 0.5rem; }
+      .project .meta { color: var(--muted); font-size: 0.95rem; }
+      .project .title { font-weight: 700; font-size: 1.05rem; }
+      .project .tags { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-top: 0.35rem; }
+
+      .skeleton { position: relative; overflow: hidden; background: color-mix(in oklab, var(--panel) 70%, white 30%); }
+      .skeleton::after {
+        content: ""; position: absolute; inset: 0; transform: translateX(-100%);
+        background: linear-gradient(90deg, transparent, color-mix(in oklab, var(--panel) 30%, white 70%), transparent);
+        animation: shimmer 1.2s infinite;
+      }
+      @keyframes shimmer { 100% { transform: translateX(100%); } }
+
+      footer { border-top: 1px solid var(--border); color: var(--muted); padding: 2rem 0; }
+    </style>
+  </head>
+  <body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <header>
+      <div class="container nav" role="navigation" aria-label="Primary">
+        <div class="brand">
+          <span class="dot" aria-hidden="true"></span>
+          <a href="#home" aria-label="Home">Oleksandr&nbsp;Sukhoviy</a>
+        </div>
+        <nav class="nav-links">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#contact">Contact</a>
+          <button id="theme-toggle" class="btn" type="button" aria-label="Toggle theme">Theme</button>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="container">
+      <section id="home" class="hero" aria-label="Hero">
+        <div>
+          <h1>React + TypeScript developer</h1>
+          <p class="lead">Building robust interfaces with Vite, MUI, and best-in-class testing. Clean, accessible, and maintainable code.</p>
+          <div class="actions">
+            <a class="btn primary" href="https://github.com/santey13" target="_blank" rel="noopener noreferrer">View GitHub</a>
+            <a class="btn" href="resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+          </div>
+          <div class="socials">
+            <a class="icon-btn" href="https://github.com/santey13" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.52 2.87 8.35 6.84 9.7.5.1.68-.22.68-.49 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.36-3.37-1.36-.46-1.2-1.12-1.52-1.12-1.52-.92-.64.07-.63.07-.63 1.02.07 1.56 1.07 1.56 1.07.9 1.58 2.36 1.12 2.94.85.09-.67.35-1.12.64-1.38-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.7 0 0 .84-.27 2.75 1.05A9.3 9.3 0 0 1 12 6.84c.85 0 1.7.12 2.5.35 1.9-1.32 2.74-1.05 2.74-1.05.55 1.4.2 2.44.1 2.7.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.49A10.03 10.03 0 0 0 22 12.26C22 6.58 17.52 2 12 2Z"/></svg>
+            </a>
+            <a class="icon-btn" href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.94 6.5A2.44 2.44 0 1 1 4.5 4.06 2.44 2.44 0 0 1 6.94 6.5ZM7 8.88H2.99V21h4.02ZM21 21h-4v-6.17c0-1.47-.02-3.35-2.04-3.35-2.05 0-2.36 1.6-2.36 3.25V21H8.58V8.88H12.4v1.65h.06a4.19 4.19 0 0 1 3.77-2.07c4.03 0 4.78 2.65 4.78 6.09Z"/></svg>
+            </a>
+            <a class="icon-btn" href="mailto:oleksandr.sukhoviy@example.com" aria-label="Email">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5L4 8V6l8 5 8-5Z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div style="display:flex;justify-content:center">
+          <img class="avatar" src="https://github.com/santey13.png?size=400" alt="Portrait photo of Oleksandr Sukhoviy" width="160" height="160" />
+        </div>
+      </section>
+
+      <section id="about" aria-labelledby="about-title">
+        <h2 id="about-title" class="section-title">About</h2>
+        <div class="card">
+          <p>
+            I specialize in building performant, accessible web apps using React, TypeScript, Vite, and MUI.
+            I focus on clean architecture, robust test coverage (Vitest + React Testing Library), and polished UX.
+          </p>
+        </div>
+      </section>
+
+      <section id="skills" aria-labelledby="skills-title">
+        <h2 id="skills-title" class="section-title">Skills</h2>
+        <div class="grid cols-3">
+          <div class="card"><span class="badge"><span class="dot"></span>React</span></div>
+          <div class="card"><span class="badge"><span class="dot"></span>TypeScript</span></div>
+          <div class="card"><span class="badge"><span class="dot"></span>Vite</span></div>
+          <div class="card"><span class="badge"><span class="dot"></span>MUI</span></div>
+          <div class="card"><span class="badge"><span class="dot"></span>Vitest</span></div>
+          <div class="card"><span class="badge"><span class="dot"></span>React Testing Library</span></div>
+        </div>
+      </section>
+
+      
+
+      <section id="contact" aria-labelledby="contact-title">
+        <h2 id="contact-title" class="section-title">Contact</h2>
+        <div class="card" style="display:flex;gap:0.75rem;flex-wrap:wrap">
+          <a class="btn primary" href="mailto:oleksandr.sukhoviy@example.com">Email me</a>
+          <a class="btn" href="https://github.com/santey13" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a class="btn" href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container" style="display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap">
+        <span>© <span id="year"></span> Oleksandr Sukhoviy</span>
+        <span>Built with React mindset — accessible, tested, maintainable.</span>
+      </div>
+    </footer>
+
+    <script>
+      // Theme handling
+      (function() {
+        const root = document.documentElement;
+        const key = 'theme-preference';
+        const saved = localStorage.getItem(key);
+        const setThemeAttr = (mode) => root.setAttribute('data-theme', mode);
+        const apply = (value) => {
+          if (!value || value === 'auto') setThemeAttr('auto');
+          else if (value === 'dark') setThemeAttr('dark');
+          else setThemeAttr('auto');
+          localStorage.setItem(key, value || 'auto');
+        };
+        apply(saved);
+        const btn = document.getElementById('theme-toggle');
+        btn?.addEventListener('click', () => {
+          const current = localStorage.getItem(key) || 'auto';
+          const next = current === 'auto' ? 'dark' : (current === 'dark' ? 'auto' : 'auto');
+          apply(next);
+        });
+      })();
+
+      // Dynamic year
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // Projects from GitHub API (public data, no token)
+      (async function loadProjects() {
+        const USERNAME = 'santey13'; // change if needed
+        const grid = document.getElementById('projects-grid');
+        try {
+          const res = await fetch(`https://api.github.com/users/${USERNAME}/repos?per_page=100&sort=updated`);
+          if (!res.ok) throw new Error('Failed to load repositories');
+          const repos = await res.json();
+          const curated = repos
+            .filter(r => !r.fork)
+            .sort((a, b) => (b.stargazers_count || 0) - (a.stargazers_count || 0))
+            .slice(0, 6);
+          grid.innerHTML = '';
+          if (curated.length === 0) {
+            grid.innerHTML = '<div class="card">No public repositories found.</div>';
+            return;
+          }
+          for (const r of curated) {
+            const card = document.createElement('article');
+            card.className = 'card project';
+            card.innerHTML = `
+              <div class="title">${r.name}</div>
+              <div class="meta">${r.description ? r.description : 'No description provided.'}</div>
+              <div class="tags">
+                ${r.language ? `<span class="badge"><span class="dot"></span>${r.language}</span>` : ''}
+                <span class="badge" title="Stars">⭐ ${r.stargazers_count}</span>
+                <span class="badge" title="Forks">🍴 ${r.forks_count}</span>
+                <span class="badge" title="Updated at">🕒 ${new Date(r.updated_at).toLocaleDateString()}</span>
+              </div>
+              <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.5rem">
+                <a class="btn" href="${r.html_url}" target="_blank" rel="noopener noreferrer">Repository</a>
+                ${r.homepage ? `<a class="btn" href="${r.homepage}" target="_blank" rel="noopener noreferrer">Live</a>` : ''}
+              </div>
+            `;
+            grid.appendChild(card);
+          }
+        } catch (err) {
+          grid.innerHTML = `<div class="card">Could not load projects. Please visit <a href="https://github.com/${USERNAME}" target="_blank" rel="noopener noreferrer">github.com/${USERNAME}</a>.</div>`;
+        }
+      })();
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Oleksandr Sukhoviy",
+        "url": "https://your-github-pages-url.example/",
+        "jobTitle": "Front-end Developer",
+        "sameAs": [
+          "https://github.com/santey13",
+          "https://www.linkedin.com"
+        ]
+      }
+    </script>
+  </body>
+  </html>
