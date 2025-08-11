@@ -212,6 +212,14 @@
         padding: 1rem;
         box-shadow: var(--shadow);
       }
+      .card ul { margin: 0.5rem 0 0; padding-left: 1.1rem; color: var(--muted); }
+      .card li { margin: 0.25rem 0; }
+      .contact-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 1rem; align-items: start; }
+      .contact-card { display: flex; align-items: center; gap: 0.75rem; padding: 1rem; }
+      .contact-card .icon-large { width: 24px; height: 24px; fill: var(--brand); flex-shrink: 0; }
+      .contact-info h3 { margin: 0 0 0.25rem; font-size: 1rem; font-weight: 600; }
+      .contact-info p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+      @media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; } }
       .grid { display: grid; gap: 1rem; }
       .grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
       .grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
@@ -264,18 +272,14 @@
         <div>
           <h1>React + TypeScript developer</h1>
           <p class="lead">Building robust interfaces with Vite, MUI, and best-in-class testing. Clean, accessible, and maintainable code.</p>
-          <div class="actions">
-            <a class="btn primary" href="https://github.com/santey13" target="_blank" rel="noopener noreferrer">View GitHub</a>
-            <a class="btn" href="resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
-          </div>
           <div class="socials">
             <a class="icon-btn" href="https://github.com/santey13" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
               <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.52 2.87 8.35 6.84 9.7.5.1.68-.22.68-.49 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.36-3.37-1.36-.46-1.2-1.12-1.52-1.12-1.52-.92-.64.07-.63.07-.63 1.02.07 1.56 1.07 1.56 1.07.9 1.58 2.36 1.12 2.94.85.09-.67.35-1.12.64-1.38-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.7 0 0 .84-.27 2.75 1.05A9.3 9.3 0 0 1 12 6.84c.85 0 1.7.12 2.5.35 1.9-1.32 2.74-1.05 2.74-1.05.55 1.4.2 2.44.1 2.7.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.49A10.03 10.03 0 0 0 22 12.26C22 6.58 17.52 2 12 2Z"/></svg>
             </a>
-            <a class="icon-btn" href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+            <a class="icon-btn" href="https://www.linkedin.com/in/oleksandr-s-b56120145/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
               <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.94 6.5A2.44 2.44 0 1 1 4.5 4.06 2.44 2.44 0 0 1 6.94 6.5ZM7 8.88H2.99V21h4.02ZM21 21h-4v-6.17c0-1.47-.02-3.35-2.04-3.35-2.05 0-2.36 1.6-2.36 3.25V21H8.58V8.88H12.4v1.65h.06a4.19 4.19 0 0 1 3.77-2.07c4.03 0 4.78 2.65 4.78 6.09Z"/></svg>
             </a>
-            <a class="icon-btn" href="mailto:oleksandr.sukhoviy@example.com" aria-label="Email">
+            <a class="icon-btn" href="mailto:suxovoy@gmail.com" aria-label="Email">
               <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5L4 8V6l8 5 8-5Z"/></svg>
             </a>
           </div>
@@ -289,8 +293,22 @@
         <h2 id="about-title" class="section-title">About</h2>
         <div class="card">
           <p>
-            I specialize in building performant, accessible web apps using React, TypeScript, Vite, and MUI.
-            I focus on clean architecture, robust test coverage (Vitest + React Testing Library), and polished UX.
+            Hi, I'm <strong>Oleksandr Sukhoviy</strong> — a Front‑end Engineer based in Valencia, currently working at
+            <strong>RxVantage</strong>. I craft performant, accessible web applications with a focus on product quality
+            and developer experience.
+          </p>
+          <p>
+            I work primarily with <strong>React</strong>, <strong>TypeScript</strong>, <strong>Vite</strong>, and
+            <strong>MUI</strong>, and I value clean architecture, maintainability, and delightful UX.
+          </p>
+          <ul>
+            <li><strong>UI engineering</strong>: design systems, component libraries, theming (MUI), accessibility.</li>
+            <li><strong>Quality</strong>: Vitest + React Testing Library, CI-ready tests, thoughtful code reviews.</li>
+            <li><strong>Performance</strong>: Core Web Vitals, bundle optimization, progressive enhancement.</li>
+            <li><strong>DX</strong>: Vite, ESLint/Prettier, typed APIs, documentation and onboarding improvements.</li>
+          </ul>
+          <p>
+            Open to collaboration on challenging front‑end projects and product engineering opportunities.
           </p>
         </div>
       </section>
@@ -311,10 +329,55 @@
 
       <section id="contact" aria-labelledby="contact-title">
         <h2 id="contact-title" class="section-title">Contact</h2>
-        <div class="card" style="display:flex;gap:0.75rem;flex-wrap:wrap">
-          <a class="btn primary" href="mailto:oleksandr.sukhoviy@example.com">Email me</a>
-          <a class="btn" href="https://github.com/santey13" target="_blank" rel="noopener noreferrer">GitHub</a>
-          <a class="btn" href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <div class="contact-grid">
+          <div class="grid">
+            <div class="card contact-card">
+              <svg class="icon-large" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5L4 8V6l8 5 8-5Z"/>
+              </svg>
+              <div class="contact-info">
+                <h3>Email</h3>
+                <p><a href="mailto:suxovoy@gmail.com">suxovoy@gmail.com</a></p>
+              </div>
+            </div>
+            <div class="card contact-card">
+              <svg class="icon-large" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.52 2.87 8.35 6.84 9.7.5.1.68-.22.68-.49 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.36-3.37-1.36-.46-1.2-1.12-1.52-1.12-1.52-.92-.64.07-.63.07-.63 1.02.07 1.56 1.07 1.56 1.07.9 1.58 2.36 1.12 2.94.85.09-.67.35-1.12.64-1.38-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.7 0 0 .84-.27 2.75 1.05A9.3 9.3 0 0 1 12 6.84c.85 0 1.7.12 2.5.35 1.9-1.32 2.74-1.05 2.74-1.05.55 1.4.2 2.44.1 2.7.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.49A10.03 10.03 0 0 0 22 12.26C22 6.58 17.52 2 12 2Z"/>
+              </svg>
+              <div class="contact-info">
+                <h3>GitHub</h3>
+                <p><a href="https://github.com/santey13" target="_blank" rel="noopener noreferrer">@santey13</a></p>
+              </div>
+            </div>
+            <div class="card contact-card">
+              <svg class="icon-large" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M6.94 6.5A2.44 2.44 0 1 1 4.5 4.06 2.44 2.44 0 0 1 6.94 6.5ZM7 8.88H2.99V21h4.02ZM21 21h-4v-6.17c0-1.47-.02-3.35-2.04-3.35-2.05 0-2.36 1.6-2.36 3.25V21H8.58V8.88H12.4v1.65h.06a4.19 4.19 0 0 1 3.77-2.07c4.03 0 4.78 2.65 4.78 6.09Z"/>
+              </svg>
+              <div class="contact-info">
+                <h3>LinkedIn</h3>
+                <p><a href="https://www.linkedin.com/in/oleksandr-s-b56120145/" target="_blank" rel="noopener noreferrer">Oleksandr Sukhoviy</a></p>
+              </div>
+            </div>
+          </div>
+          <div class="card contact-card">
+            <svg class="icon-large" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/>
+            </svg>
+            <div class="contact-info">
+              <h3>Address</h3>
+              <address style="font-style: normal; color: var(--muted); line-height: 1.4;">
+                Antonio Ferrandis 16<br/>
+                Bloque A, piso 4, puerta C<br/>
+                46013, Valencia
+              </address>
+            </div>
+          </div>
+        </div>
+        <div class="card" style="margin-top: 1rem; text-align: center; padding: 1.5rem;">
+          <p style="margin: 0 0 1rem; color: var(--muted);">Ready to collaborate? Let's build something amazing together.</p>
+          <a class="btn primary" href="mailto:suxovoy@gmail.com" style="font-size: 1.05rem; padding: 0.85rem 1.5rem;">
+            Get in Touch
+          </a>
         </div>
       </section>
     </main>
